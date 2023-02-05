@@ -1,0 +1,146 @@
+li {
+    padding:2px;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #8A9198
+}
+
+a:hover {
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #8A9198;
+}
+
+.dropdown-item:hover {
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+.bottom-container {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #2B3035;
+    padding: 24px 0 20px;
+}
+
+.copyrights {
+    color: #EEEEEE;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    padding: 20px 0 20px;
+    margin: 0;
+}
+
+/*CHART*/
+#chart {
+    margin: 0 auto; /* Center the graph horizontally */
+    display: block;
+}
+
+/*NAVBAR*/
+
+#mainNav {
+    position: absolute;
+    border-bottom: 1px solid #e9ecef;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    width:100%;
+    left:0;
+    z-index: 2;
+}
+
+#mainNav .navbar-brand {
+  font-weight: 700;
+  color: #343a40;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 13px;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+#mainNav .navbar-nav > li.nav-item > a {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    border-bottom: 1px solid transparent;
+    background: transparent;
+  }
+  #mainNav .navbar-brand {
+    padding: 10px 20px;
+    color: #fff;
+  }
+  /*#mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {*/
+  /*  color: rgba(255, 255, 255, 0.8);*/
+  /*}*/
+  /*#mainNav .navbar-nav > li.nav-item > a {*/
+  /*  padding: 10px 20px;*/
+  /*  color: #fff;*/
+  /*}*/
+  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    transition: background-color 0.2s;
+    /* Force Hardware Acceleration in WebKit */
+    transform: translate3d(0, 0, 0);
+    /* -webkit-backface-visibility: hidden; */
+  }
+
+  #mainNav.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -67px;
+    transition: transform 0.2s;
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  /*#mainNav.is-fixed .navbar-brand {*/
+  /*  color: #212529;*/
+  /*}*/
+  /*#mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {*/
+  /*  color: #0085A1;*/
+  /*}*/
+  /*#mainNav.is-fixed .navbar-nav > li.nav-item > a {*/
+  /*  color: #212529;*/
+  /*}*/
+  /*#mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {*/
+  /*  color: #0085A1;*/
+  /*}*/
+  #mainNav.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+
+
+/*Search*/
+
+
+#suggestions select{
+    display: none;
+}
+#suggestions select option{
+    display: block;
+}
+
