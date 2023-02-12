@@ -217,22 +217,26 @@
         </script>
 
         <script>
-            var data_search = {{ data_search|tojson|safe }};
-            $("#search-input").autocomplete({
-                source: function( request, response ) {
-                    // filter the countries that starts with the input value
-                    response(data_search.filter(function(country) {
-                        return country.toLowerCase().startsWith(request.term.toLowerCase());
-                    }));
-                },
-                select: function( event, ui ) {
-                    // Fill the input field with the selected suggestion
-                    $("#search-input").val(ui.item.value);
-                    // Trigger the form submit when a suggestion is selected
-                    $("#search-form").submit();
-                }
-            });
-        </script>
+          $(document).ready(function() {
+              $("#search-input").focus();
+      
+              var data_search = {{ data_search|tojson|safe }};
+              $("#search-input").autocomplete({
+                  source: function( request, response ) {
+                      // filter the countries that starts with the input value
+                      response(data_search.filter(function(country) {
+                          return country.toLowerCase().startsWith(request.term.toLowerCase());
+                      }));
+                  },
+                  select: function( event, ui ) {
+                      // Fill the input field with the selected suggestion
+                      $("#search-input").val(ui.item.value);
+                      // Trigger the form submit when a suggestion is selected
+                      $("#search-form").submit();
+                  }
+              });
+          });
+      </script>
 
 
 
