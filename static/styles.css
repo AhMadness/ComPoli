@@ -47,6 +47,11 @@ a:hover {
     margin-bottom: 40px;
 }
 
+#outerchart {
+    margin:0 200px 0 !important; 
+    padding-top:12px !important;
+}
+
 /*NAVBAR*/
 
 #mainNav {
