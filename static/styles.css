@@ -42,6 +42,9 @@ a:hover {
 #chart {
     margin: 0 auto; /* Center the graph horizontally */
     display: block;
+    width: 800px; 
+    height: 800px; 
+    margin-bottom: 40px;
 }
 
 /*NAVBAR*/
@@ -143,4 +146,8 @@ a:hover {
 #suggestions select option{
     display: block;
 }
+
+.github i {
+  font-size: 24px;
+} 
 

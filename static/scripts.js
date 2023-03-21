@@ -28,6 +28,46 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 })
 
+window.onload = function() {
+    location.hash = "#chart";
+    window.scrollBy(0, 66); // additional scroll down by pixels.
+
+    setTimeout(function() {
+        const mainNav = document.getElementById('mainNav');
+        mainNav.classList.add('is-visible');
+    }, 500); // 0.5s delay
+  }
+
+$(document).ready(function() {
+    $("#search-input").focus();
+    $("#search-input").autocomplete({
+        source: function( request, response ) {
+            // filter the countries that starts with the input value
+            response(data_search.filter(function(country) {
+                return country.toLowerCase().startsWith(request.term.toLowerCase());
+            }));
+        },
+        select: function( event, ui ) {
+            // Fill the input field with the selected suggestion
+            $("#search-input").val(ui.item.value);
+            // Trigger the form submit when a suggestion is selected
+            $("#search-form").submit();
+        }
+    });
+});
+
+function closeDropdown() {
+    document.getElementById("navbarDropdown").click();
+}
+
+function titleCase(str) {
+    return str.toLowerCase().replace(/(^|\s)[a-z]/g, function(match) {
+    return match.toUpperCase();
+    }).replace(/\b[a-z]/g, function(letter) {
+    return letter.toUpperCase();
+    });
+}
+
 function extractLast( term ) {
     return term.split( /,\s*/ ).pop();
 }
