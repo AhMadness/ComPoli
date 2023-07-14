@@ -54,6 +54,13 @@
 
                           <li>
                             <form class="form" action="{{url_for('index')}}" method="POST">
+                                <input type="hidden" name="country" value="nato">
+                                <a href="#" onclick="this.parentNode.submit()">NATO</a>
+                            </form>
+                          </li>
+
+                          <li>
+                            <form class="form" action="{{url_for('index')}}" method="POST">
                                 <input type="hidden" name="country" value="all">
                                 <a href="#" onclick="this.parentNode.submit()">Plot All (e.t. 30s)</a>
                             </form>
