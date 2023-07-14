@@ -111,6 +111,18 @@ def index():
                 fig.update_layout(images=existing_image_objects, showlegend=False)
                 fig.add_scatter(x=[x], y=[y], name=key, mode='markers', hoverinfo='name', hoverlabel=dict(bgcolor='white', font=dict(color='black')))
 
+        elif country.lower() == 'nato':
+            for key, value in data_nato.items():
+                x, y = value
+                flag_url = f"flags/{key.lower()}.png"
+                img = Image.open(flag_url)
+                existing_image_objects = list(fig.layout.images) if fig.layout.images else []
+                image_object = go.layout.Image(source=img, xref="x", yref="y", x=x, y=y, sizex=1, sizey=1,
+                                               xanchor="center", yanchor="middle")
+                existing_image_objects.append(image_object)
+                fig.update_layout(images=existing_image_objects, showlegend=False)
+                fig.add_scatter(x=[x], y=[y], name=key, mode='markers', hoverinfo='name', hoverlabel=dict(bgcolor='white', font=dict(color='black')))
+
         elif country.lower() == 'real':
             for key, value in data_usa["Real"].items():
                 x, y = value
