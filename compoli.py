@@ -3,7 +3,7 @@ import plotly
 import json
 import os
 from flask import Flask, render_template, send_from_directory, request
-from data import data, data_usa, data_eu, data_g20, countries, states, data_search
+from data import data, data_usa, data_eu, data_g20, data_nato, countries, states, data_search
 from PIL import Image
 
 # PLOTLY
